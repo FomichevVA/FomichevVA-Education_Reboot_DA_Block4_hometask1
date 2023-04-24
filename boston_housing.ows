@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="boston" description="">
+	<nodes>
+		<node id="0" name="CSV File Import" qualified_name="Orange.widgets.data.owcsvimport.OWCSVFileImport" project_name="Orange3" version="" title="CSV File Import" position="(150, 150)" />
+		<node id="1" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWDataTable" project_name="Orange3" version="" title="Data Table" position="(300, 0)" />
+		<node id="2" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="Select Columns" position="(300, 150)" />
+		<node id="3" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWDataTable" project_name="Orange3" version="" title="Data Table with  target" position="(450, 0)" />
+		<node id="4" name="Data Sampler" qualified_name="Orange.widgets.data.owdatasampler.OWDataSampler" project_name="Orange3" version="" title="Data Sampler" position="(450, 150)" />
+		<node id="5" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWDataTable" project_name="Orange3" version="" title="train" position="(600, 0)" />
+		<node id="6" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWDataTable" project_name="Orange3" version="" title="test" position="(600, 300)" />
+		<node id="7" name="Linear Regression" qualified_name="Orange.widgets.model.owlinearregression.OWLinearRegression" project_name="Orange3" version="" title="Linear Regression" position="(750, 0)" />
+		<node id="8" name="Predictions" qualified_name="Orange.widgets.evaluate.owpredictions.OWPredictions" project_name="Orange3" version="" title="Predictions" position="(900, 150)" />
+		<node id="9" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="Select Data" position="(1050.0, 152.0)" />
+		<node id="10" name="Save Data" qualified_name="Orange.widgets.data.owsave.OWSave" project_name="Orange3" version="" title="Save Data" position="(1200.0, 151.0)" />
+	</nodes>
+	<links>
+		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="1" source_node_id="0" sink_node_id="2" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="2" source_node_id="2" sink_node_id="3" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="3" source_node_id="2" sink_node_id="4" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="4" source_node_id="4" sink_node_id="5" source_channel="Data Sample" sink_channel="Data" enabled="true" />
+		<link id="5" source_node_id="4" sink_node_id="6" source_channel="Remaining Data" sink_channel="Data" enabled="true" />
+		<link id="6" source_node_id="7" sink_node_id="8" source_channel="Model" sink_channel="Predictors" enabled="true" />
+		<link id="7" source_node_id="6" sink_node_id="8" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="8" source_node_id="8" sink_node_id="9" source_channel="Predictions" sink_channel="Data" enabled="true" />
+		<link id="9" source_node_id="5" sink_node_id="7" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="10" source_node_id="9" sink_node_id="10" source_channel="Data" sink_channel="Data" enabled="true" />
+	</links>
+	<annotations />
+	<thumbnail />
+	<node_properties>
+		<properties node_id="0" format="literal">{'_session_items': [], '_session_items_v2': [({'type': 'AbsPath', 'path': 'C:/Users/Vasiliy/YandexDisk/Учеба/Аналитик данных - СберУниверситет/Блок 4(ML)/Lesson 1/boston_housing_.csv'}, {'encoding': 'utf-8', 'delimiter': ';', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 15, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''}), ({'type': 'AbsPath', 'path': 'C:/Users/Vasiliy/YandexDisk/Учеба/Аналитик данных - СберУниверситет/Блок 4(ML)/Lesson 1/boston_housing.csv'}, {'encoding': 'utf-8', 'delimiter': ';', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 14, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': ',', 'group_separator': ''})], 'compatibility_mode': False, 'controlAreaVisible': True, 'dialog_state': {'directory': 'C:/Users/Vasiliy/YandexDisk/Учеба/Аналитик данных - СберУниверситет/Блок 4(ML)/Lesson 1', 'filter': 'Text - comma separated (*.csv, *)'}, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\n&lt;\x00\x00\x01[\x00\x00\x0bS\x00\x00\x02\xaf\x00\x00\n=\x00\x00\x01z\x00\x00\x0bR\x00\x00\x02\xae\x00\x00\x00\x01\x00\x00\x00\x00\x06\x90\x00\x00\n=\x00\x00\x01z\x00\x00\x0bR\x00\x00\x02\xae', '__version__': 3}</properties>
+		<properties node_id="1" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'dist_color_RGB': (220, 220, 220, 255), 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\t8\x00\x00\x01\x1a\x00\x00\x0cW\x00\x00\x03\r\x00\x00\t8\x00\x00\x01\x1a\x00\x00\x0cW\x00\x00\x03\r\x00\x00\x00\x01\x00\x00\x00\x00\x06\x90\x00\x00\t8\x00\x00\x01\x1a\x00\x00\x0cW\x00\x00\x03\r', 'select_rows': True, 'selected_cols': [], 'selected_rows': [], 'show_attribute_labels': True, 'show_distributions': False, '__version__': 2}</properties>
+		<properties node_id="2" format="pickle">gASVJQUAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNpZ25v
+cmVfbmV3X2ZlYXR1cmVzlImME3NhdmVkV2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAACZsAAADJ
+AAAL9AAAA0AAAAmcAAAA6AAAC/MAAAM/AAAAAQAAAAAGkAAACZwAAADoAAAL8wAAAz+UjBJ1c2Vf
+aW5wdXRfZmVhdHVyZXOUiYwLX192ZXJzaW9uX1+USwGMEGNvbnRleHRfc2V0dGluZ3OUXZQojBVv
+cmFuZ2V3aWRnZXQuc2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1ZXOUfZQojBFkb21h
+aW5fcm9sZV9oaW50c5R9lCiMC1VubmFtZWQ6IDE0lEsChpSMCWF2YWlsYWJsZZRLAIaUjARjcmlt
+lEsChpSMCWF0dHJpYnV0ZZRLAIaUjAJ6bpRLAoaUaBlLAYaUjAVpbmR1c5RLAoaUaBlLAoaUjARj
+aGFzlEsBhpRoGUsDhpSMA25veJRLAoaUaBlLBIaUjANhZ2WUSwKGlGgZSwWGlIwCcm2USwKGlGgZ
+SwaGlIwDZGlzlEsChpRoGUsHhpSMA3JhZJRLAoaUaBlLCIaUjAN0YXiUSwKGlGgZSwmGlIwHcHRy
+YXRpb5RLAoaUaBlLCoaUjAVibGFja5RLAoaUaBlLC4aUjAVsc3RhdJRLAoaUaBlLDIaUjARtZWR2
+lEsChpSMBWNsYXNzlEsAhpR1Sv7///+GlGgHSwF1jAphdHRyaWJ1dGVzlH2UKGgXSwJoG0sCaB5L
+AmghSwFoJEsCaCpLAmgnSwJoLUsCaDBLAmgzSwJoNksCaDlLAmg8SwJoP0sCaBNLAnWMBW1ldGFz
+lH2UdWJoDCmBlH2UKGgPfZQoaBF9lChoF0sChpRoGUsAhpRoG0sChpRoGUsBhpRoHksChpRoGUsC
+hpRoIUsBhpRoGUsDhpRoJEsChpRoGUsEhpRoJ0sChpRoGUsFhpRoKksChpRoGUsGhpRoLUsChpRo
+GUsHhpRoMEsChpRoGUsIhpRoM0sChpRoGUsJhpRoNksChpRoGUsKhpRoOUsChpRoGUsLhpRoPEsC
+hpRoGUsMhpRoP0sChpRoQUsAhpR1Sv7///+GlGgHSwF1aER9lChoF0sCaBtLAmgeSwJoIUsBaCRL
+AmgqSwJoJ0sCaC1LAmgwSwJoM0sCaDZLAmg5SwJoPEsCaD9LAnVoRn2UdWJoDCmBlH2UKGgPfZQo
+jBFkb21haW5fcm9sZV9oaW50c5R9lCiMBGNyaW2USwKGlIwJYXR0cmlidXRllEsAhpSMAnpulEsC
+hpRocksBhpSMBWluZHVzlEsChpRocksChpSMBGNoYXOUSwGGlGhySwOGlIwDbm94lEsChpRocksE
+hpSMA2FnZZRLAoaUaHJLBYaUjAJybZRLAoaUaHJLBoaUjANkaXOUSwKGlGhySweGlIwDcmFklEsC
+hpRocksIhpSMA3RheJRLAoaUaHJLCYaUjAhwdHJhdGlvbpRLAoaUaHJLCoaUjAVibGFja5RLAoaU
+aHJLC4aUjAVsc3RhdJRLAoaUaHJLDIaUjARtZWR2lEsChpSMBWNsYXNzlEsAhpR1Sv7///+GlGgH
+SwF1aER9lChocEsCaHRLAmh3SwJoeksBaH1LAmiDSwJogEsCaIZLAmiJSwJojEsCaI9LAmiSSwJo
+lUsCaJhLAnVoRn2UdWJldS4=
+</properties>
+		<properties node_id="3" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'dist_color_RGB': (220, 220, 220, 255), 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\t7\x00\x00\x00\xfb\x00\x00\x0cX\x00\x00\x03\x0e\x00\x00\t8\x00\x00\x01\x1a\x00\x00\x0cW\x00\x00\x03\r\x00\x00\x00\x01\x00\x00\x00\x00\x06\x90\x00\x00\t8\x00\x00\x01\x1a\x00\x00\x0cW\x00\x00\x03\r', 'select_rows': True, 'selected_cols': [], 'selected_rows': [], 'show_attribute_labels': True, 'show_distributions': False, '__version__': 2}</properties>
+		<properties node_id="4" format="literal">{'compatibility_mode': False, 'controlAreaVisible': True, 'number_of_folds': 10, 'replacement': False, 'sampleSizeNumber': 1, 'sampleSizePercentage': 70, 'sampleSizeSqlPercentage': 0.1, 'sampleSizeSqlTime': 1, 'sampling_type': 0, 'savedWidgetGeometry': b"\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x03W\x00\x00\x01+\x00\x00\x04(\x00\x00\x02\xc6\x00\x00\x03X\x00\x00\x01J\x00\x00\x04'\x00\x00\x02\xc5\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x03X\x00\x00\x01J\x00\x00\x04'\x00\x00\x02\xc5", 'selectedFold': 1, 'sql_dl': False, 'stratify': False, 'use_seed': True, '__version__': 2}</properties>
+		<properties node_id="5" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'dist_color_RGB': (220, 220, 220, 255), 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02/\x00\x00\x00\xef\x00\x00\x05P\x00\x00\x03\x02\x00\x00\x020\x00\x00\x01\x0e\x00\x00\x05O\x00\x00\x03\x01\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x020\x00\x00\x01\x0e\x00\x00\x05O\x00\x00\x03\x01', 'select_rows': False, 'selected_cols': [8], 'selected_rows': [12], 'show_attribute_labels': True, 'show_distributions': False, '__version__': 2}</properties>
+		<properties node_id="6" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'dist_color_RGB': (220, 220, 220, 255), 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02/\x00\x00\x00\xef\x00\x00\x05P\x00\x00\x03\x02\x00\x00\x020\x00\x00\x01\x0e\x00\x00\x05O\x00\x00\x03\x01\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x020\x00\x00\x01\x0e\x00\x00\x05O\x00\x00\x03\x01', 'select_rows': True, 'selected_cols': [], 'selected_rows': [], 'show_attribute_labels': True, 'show_distributions': False, '__version__': 2}</properties>
+		<properties node_id="7" format="literal">{'alpha_index': 0, 'auto_apply': True, 'autosend': True, 'controlAreaVisible': True, 'fit_intercept': True, 'l2_ratio': 0.5, 'learner_name': '', 'reg_type': 0, 'ridge': False, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x03\x1c\x00\x00\x01@\x00\x00\x04d\x00\x00\x02\xb2\x00\x00\x03\x1d\x00\x00\x01_\x00\x00\x04c\x00\x00\x02\xb1\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x03\x1d\x00\x00\x01_\x00\x00\x04c\x00\x00\x02\xb1', '__version__': 1}</properties>
+		<properties node_id="8" format="pickle">gASV1wEAAAAAAAB9lCiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZlZFdpZGdldEdlb21ldHJ5
+lENCAdnQywADAAAAAAK5AAABTwAABTMAAAOWAAACugAAAW4AAAUyAAADlQAAAAAAAAAAB4AAAAK6
+AAABbgAABTIAAAOVlIwJc2VsZWN0aW9ulF2UjAtzaG93X3Njb3Jlc5SIjAtzY29yZV90YWJsZZR9
+lIwMc2hvd25fc2NvcmVzlI+UKIwDQVVDlIwCRjGUjANNQUWUjAZSZWNhbGyUjAdDLUluZGV4lIwJ
+UHJlY2lzaW9ulIwCUjKUjARSTVNFlIwDTVNFlIwCQ0GUkHOMC19fdmVyc2lvbl9flEsBjBBjb250
+ZXh0X3NldHRpbmdzlF2UjBVvcmFuZ2V3aWRnZXQuc2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQo
+jAZ2YWx1ZXOUfZQojBdzaG93X3Byb2JhYmlsaXR5X2Vycm9yc5SIjA9zaG93X3JlZ19lcnJvcnOU
+SwGMC3Nob3duX3Byb2JzlEsAjAx0YXJnZXRfY2xhc3OUjBYoQXZlcmFnZSBvdmVyIGNsYXNzZXMp
+lGgHfZRoFUsBdYwHY2xhc3Nlc5QpdWJhdS4=
+</properties>
+		<properties node_id="9" format="pickle">gASVXwQAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNpZ25v
+cmVfbmV3X2ZlYXR1cmVzlImME3NhdmVkV2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAAApMAAAC9
+AAAE7AAAAzQAAAKUAAAA3AAABOsAAAMzAAAAAAAAAAAHgAAAApQAAADcAAAE6wAAAzOUjBJ1c2Vf
+aW5wdXRfZmVhdHVyZXOUiYwLX192ZXJzaW9uX1+USwGMEGNvbnRleHRfc2V0dGluZ3OUXZQojBVv
+cmFuZ2V3aWRnZXQuc2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1ZXOUfZQojBFkb21h
+aW5fcm9sZV9oaW50c5R9lCiMCFNlbGVjdGVklEsBhpSMCWF2YWlsYWJsZZRLAIaUjBFMaW5lYXIg
+UmVncmVzc2lvbpRLAoaUjAlhdHRyaWJ1dGWUSwCGlIwEbWVkdpRLAoaUaBlLAYaUjARjcmltlEsC
+hpRoGUsChpSMAnpulEsChpRoGUsDhpSMBWluZHVzlEsChpRoGUsEhpSMBGNoYXOUSwGGlGgZSwWG
+lIwDbm94lEsChpRoGUsGhpSMAnJtlEsChpRoGUsHhpSMA2FnZZRLAoaUaBlLCIaUjANkaXOUSwKG
+lGgZSwmGlIwDcmFklEsChpRoGUsKhpSMA3RheJRLAoaUaBlLC4aUjAdwdHJhdGlvlEsChpRoGUsM
+hpSMBWJsYWNrlEsChpRoGUsNhpSMBWxzdGF0lEsChpRoGUsOhpR1Sv7///+GlGgHSwF1jAphdHRy
+aWJ1dGVzlH2UKIwEY3JpbZRLAowCem6USwKMBWluZHVzlEsCjARjaGFzlEsBjANub3iUSwKMA2Fn
+ZZRLAowCcm2USwKMA2Rpc5RLAowDcmFklEsCjAN0YXiUSwKMB3B0cmF0aW+USwKMBWJsYWNrlEsC
+jAVsc3RhdJRLAowEbWVkdpRLAnWMBW1ldGFzlH2UKIwIU2VsZWN0ZWSUSwGMEUxpbmVhciBSZWdy
+ZXNzaW9ulEsCdXViaAwpgZR9lChoD32UKIwRZG9tYWluX3JvbGVfaGludHOUfZQoaEhLAoaUjAlh
+dHRyaWJ1dGWUSwCGlGhJSwKGlGhgSwGGlGhKSwKGlGhgSwKGlGhLSwGGlGhgSwOGlGhMSwKGlGhg
+SwSGlGhOSwKGlGhgSwWGlGhNSwKGlGhgSwaGlGhPSwKGlGhgSweGlGhQSwKGlGhgSwiGlGhRSwKG
+lGhgSwmGlGhSSwKGlGhgSwqGlGhTSwKGlGhgSwuGlGhUSwKGlGhgSwyGlGhVSwKGlGhgSw2GlGhY
+SwGGlIwEbWV0YZRLAIaUdUr+////hpRoB0sBdWhGfZQoaEhLAmhJSwJoSksCaEtLAWhMSwJoTUsC
+aE5LAmhPSwJoUEsCaFFLAmhSSwJoU0sCaFRLAmhVSwJ1aFZ9lGhYSwFzdWJldS4=
+</properties>
+		<properties node_id="10" format="literal">{'add_type_annotations': True, 'auto_save': True, 'controlAreaVisible': True, 'filter': 'Comma-separated values (*.csv)', 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x03T\x00\x00\x01\xaa\x00\x00\x04l\x00\x00\x02G\x00\x00\x03U\x00\x00\x01\xc9\x00\x00\x04k\x00\x00\x02F\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x03U\x00\x00\x01\xc9\x00\x00\x04k\x00\x00\x02F', 'stored_name': 'out boston_housing_.csv', 'stored_path': 'C:/Users/Vasiliy/YandexDisk/Учеба/Аналитик данных - СберУниверситет/Блок 4(ML)/Lesson 1', '__version__': 3}</properties>
+	</node_properties>
+	<session_state>
+		<window_groups />
+	</session_state>
+</scheme>
